@@ -5,6 +5,16 @@ Rails.application.routes.draw do
 
   get 'static_pages/index'
 
+  resources :products
+  
+  get 'products/index'
+  
+  get 'products/edit'
+
+  get 'products/new'
+
+  get 'products/show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
