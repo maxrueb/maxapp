@@ -2,9 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+	text-align: center;
+	background-color: aliceblue;
+}
+
 h1 {
 	font-size: 4em;
-	color: red;
-	text-align: center;
-	background-color: grey;
+}
+
+nav {
+	text-align: left;
+	background-color: #ededef;
+	padding-bottom: 1%;
+    padding-top: 1%;
+    border-color: #eae1d2;
+    border-style: double;
+}
+
+img {
+	display: block;
+	border-color: #eae1d2;
+}
+footer {
+	margin-top: inherit; 
 }
