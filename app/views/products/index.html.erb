@@ -2,12 +2,13 @@
 
 <h1>Products</h1>
 
-<table>
+<!-- <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
       <th>Image url</th>
+      <th>Color</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= product.name %></td>
         <td><%= product.description %></td>
         <td><%= product.image_url %></td>
+        <td><%= product.color %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,6 +27,37 @@
     <% end %>
   </tbody>
 </table>
+
+    <% @products.each do |product| %>
+      <tr>
+        <td class="col-sm-2 col-md-4"> 
+          <a> <%= product.image_url %> </a> <br>
+          <b><u><%= product.name %></u></b> <br>
+          <%= product.description %> <br> 
+          <%= product.color %> <br>
+          <%= link_to 'Show', product %>
+          <%= link_to 'Edit', edit_product_path(product) %>
+          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %> -->
+
+
+
+<div class="container-fluid" >
+  <div class="row">
+    <% @products.each do |product| %>
+       <div class=" product col-sm-2 col-md-3">
+       <%= image_tag("racebike.jpg", class: "img-responsive") %>
+        <h2><%= product.name %></h2>
+        <p><%= product.description %></p>
+        <strong><%= product.color %></strong> <br>
+        <%= link_to 'Show', product %>
+        <%= link_to 'Edit', edit_product_path(product) %>
+        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div><!-- /col -->
+    <% end %>
+  </div>
+</div>
 
 <br>
 
