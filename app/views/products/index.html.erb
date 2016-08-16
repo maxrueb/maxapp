@@ -47,7 +47,9 @@
   <div class="row">
     <% @products.each do |product| %>
        <div class=" product col-sm-2 col-md-3">
-       <%= image_tag("racebike.jpg", class: "img-responsive") %>
+        <% if product.image_url %>
+          <%= image_tag(product.image_url, class: "img-responsive") %>
+        <% end %>
         <h2><%= product.name %></h2>
         <p><%= product.description %></p>
         <strong><%= product.color %></strong> <br>
