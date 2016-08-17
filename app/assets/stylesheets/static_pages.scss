@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+/*static_pages*/
 body {
 	text-align: center;
 	background-color: aliceblue;
@@ -11,23 +13,38 @@ h1 {
 	font-size: 4em;
 }
 
+/*Nav*/
 nav {
 	text-align: left;
 	background-color: #ededef;
     border-color: #eae1d2;
     border-style: double;
-    font-size: 29px;
 }
 
+#nav {
+	font-size: 20px;
+}
+
+a {
+	margin-right: 1.5%;
+}
+
+/*Image*/
 img {
 	display: block;
 	border-color: #eae1d2;
 }
-footer {
-	margin-top: inherit; 
-}
 
+/*Carousel*/
 .item {
 	color: black;
 }
 
+/*contact*/
+li {
+	background-color: aliceblue;
+}
+
+#contact-list {
+	list-style: none;
+}
