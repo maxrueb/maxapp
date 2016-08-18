@@ -30,10 +30,12 @@ a {
 }
 
 /*Image*/
-img {
-	display: block;
+.img-responsive {
+	border-style: double;
 	border-color: #eae1d2;
+	display: -webkit-inline-box;
 }
+
 
 /*Carousel*/
 .item {
@@ -47,4 +49,12 @@ li {
 
 #contact-list {
 	list-style: none;
+}
+
+/*Footer*/
+.path {
+	background-color: yellow;
+	width: 30%;
+	margin: 2%;
+	display: inline-block
 }
