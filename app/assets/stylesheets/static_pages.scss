@@ -7,27 +7,33 @@
 body {
 	text-align: center;
 	background-color: aliceblue;
+	margin-top: 6%;
 }
 
 h1 {
 	font-size: 4em;
+	margin-bottom: 3%;
 }
 
 /*Nav*/
-nav {
-	text-align: left;
-	background-color: #ededef;
-    border-color: #eae1d2;
-    border-style: double;
-}
 
 #nav {
 	font-size: 20px;
+	background-color: #ededef;
 }
 
-a {
-	margin-right: 1.5%;
+.navbar {
+	background-color: #ededef;
+	border-color: #eae1d2;
+    border-style: double;
+	padding-top: 1%;
+    padding-bottom: 1%;
 }
+
+#search {
+	float: left;
+}
+
 
 /*Image*/
 .img-responsive {
@@ -52,6 +58,10 @@ li {
 }
 
 /*Footer*/
+footer {
+	padding-top: 2%;
+}
+
 .path {
 	background-color: yellow;
 	width: 30%;

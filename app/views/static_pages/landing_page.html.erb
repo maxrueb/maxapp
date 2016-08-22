@@ -1,5 +1,6 @@
 <!-- <h2>Featured Product:</h2>
 <%= @featured_product.name %> -->
+<%= params[:example_key].to_i * 10 %>
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -33,6 +34,3 @@
 </div>
 
 <div class="path"> <span class="glyphicon glyphicon-glyphicon glyphicon-fire"> </span> <%= link_to "See all products", products_path %></div>
-
-
-
