@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   get 'orders/show'
 
+  get 'static_pages/thank_you'
+
   post 'static_pages/thank_you'
 
   # The priority is based upon order of creation: first created -> highest priority.
