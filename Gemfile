@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Adding Authentication with Devise (5.4)
 gem 'devise'
+# Adding Authorization with Cancancan (5.5)
+gem 'cancancan', '~> 1.10'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

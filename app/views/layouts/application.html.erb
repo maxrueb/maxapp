@@ -52,7 +52,16 @@
       </nav>
     </div>
 
-<!-- 	<nav>
+
+<% if notice %>
+    <p id="notice" class="alert alert-info" role="alert"><%= notice %></p>
+<% end %>
+
+
+
+
+
+<!--  <nav>
 		<ul>
 			<a id="nav" href="/static_pages/index">Home</a> 
 			<a id="nav" href="/static_pages/about">About</a>
