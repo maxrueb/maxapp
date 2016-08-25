@@ -35,6 +35,15 @@
                 <li id="nav"><a href="/products">Products</a></li>
                 <li id="nav"><a href="/orders">Orders</a></li>
               </ul>
+              <ul class="nav pull-right">
+                <li>
+                <% if user_signed_in? %>
+                <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+                <% else %>
+                <%= link_to('Login', new_user_session_path) %>
+                <% end %>
+                </li>
+              </ul>
           <div id="search"><%= form_tag("/products", method: "get") do %>
             <%= label_tag(:q, "Search for:") %>
             <%= text_field_tag(:q) %>
@@ -59,6 +68,14 @@
           <% end %> </div>
     </ul>
 	</nav> -->
+  <div>
+  <% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+  </div>
 
 <%= yield %>
 
