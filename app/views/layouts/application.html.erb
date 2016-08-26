@@ -52,29 +52,6 @@
       </nav>
     </div>
 
-
-<% if notice %>
-    <p id="notice" class="alert alert-info" role="alert"><%= notice %></p>
-<% end %>
-
-
-
-
-
-<!--  <nav>
-		<ul>
-			<a id="nav" href="/static_pages/index">Home</a> 
-			<a id="nav" href="/static_pages/about">About</a>
-			<a id="nav" href="/static_pages/contact">Contact</a>
-			<a id="nav" href="/products">Products</a>
-			<a id="nav" href="/orders">Orders</a> 
-      <div id="search"><%= form_tag("/products", method: "get") do %>
-            <%= label_tag(:q, "Search for:") %>
-            <%= text_field_tag(:q) %>
-            <%= submit_tag("Search") %>
-          <% end %> </div>
-    </ul>
-	</nav> -->
   <div>
   <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
@@ -86,7 +63,7 @@
 
 <%= yield %>
 
-	<footer>
+	<footer class="col-lg-12 col-xs-12">
 	  &copy; 2015 Bike Berlin
 	</footer>
   </body>
