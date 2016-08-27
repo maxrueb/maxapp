@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+  resources :products do
+    resources :comments
+  end
   resources :users
+  resources :orders, only: [:index, :show, :create, :destroy]
+ 
   get 'static_pages/about'
 
   get 'static_pages/contact'
@@ -8,8 +13,6 @@ Rails.application.routes.draw do
   get 'static_pages/index'
 
   get 'static_pages/landing_page'
-
-  resources :products
   
   get 'products/index'
   
@@ -18,8 +21,6 @@ Rails.application.routes.draw do
   get 'products/new'
 
   get 'products/show'
-
-  resources :orders, only: [:index, :show, :create, :destroy]
 
   get 'orders/index'
 

@@ -15,6 +15,8 @@ end
   # GET /products/1
   # GET /products/1.json
   def show
+    @comments = @product.comments.order("created_at DESC")
+    @products = Product.all
   end
 
   # GET /products/new
