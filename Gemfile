@@ -31,6 +31,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 # Adding Authorization with Cancancan (5.5)
 gem 'cancancan', '~> 1.10'
+# Paginate the comments section
+gem 'will_paginate', '~> 3.1.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

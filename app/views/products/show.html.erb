@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
 <h3>Detailed Productinformation</h3>
 
@@ -33,7 +33,7 @@
 
 	<p>
 		<strong>Highest Comment</strong><br>
-		<%= @product.highest_rating_comment %>
+		<%= Product.first.highest_rating_comment.body %>
 	</p>
 
 
@@ -44,6 +44,7 @@
 <!-- <div class="col-lg-4 col-xs-12">
 </div> -->
 
+<!-- _new_comment.html.erb -->
 <div class="col-lg-6 col-xs-12">
 <% if signed_in? %>
   <h4>Add a review:</h4>
@@ -62,13 +63,21 @@
     </p>
   <% end %>
 <% end %>
+
+
+	<!--  _comments.html.erb -->
+	<div class="product-reviews">
+	    <% @comments.each do |comment| %>
+	        <div class="row">
+	            <hr><div class="rated" data-score="<%= comment.rating %>"></div>
+	            <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
+    			<% if signed_in? && current_user.admin? %>
+       			<%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+    			<% end %></p>
+	            <p><%= "Rating: #{comment.rating}/5" %></p>
+	            <p><%= comment.body %></p>
+	        </div>
+	    <% end %>
+	</div>
+
 </div>
-
-<!-- <% @products.each do |product| %>
-    <div class="product col-md-3 col-xs-12">
-    	<% if product.image_url %>
-          <%= image_tag(product.image_url, class: "img-responsive") %>
-        <% end %>
-    </div>
-<% end %> -->
-
