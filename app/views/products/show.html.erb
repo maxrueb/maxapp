@@ -1,3 +1,7 @@
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+
 <!-- <p id="notice"><%= notice %></p> -->
 
 <h3>Detailed Productinformation</h3>
@@ -62,6 +66,7 @@
 
 	<!--  _comments.html.erb -->
 	<div class="product-reviews">
+		<p><strong>Latest Commets</strong></p>
 	    <% @comments.each do |comment| %>
 	        <div class="row">
 	            <hr><div class="rated" data-score="<%= comment.rating %>"></div>
