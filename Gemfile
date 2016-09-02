@@ -34,6 +34,9 @@ gem 'cancancan', '~> 1.10'
 # Paginate the comments section
 gem 'will_paginate', '~> 3.1.0'
 
+# Adding a payment system  
+gem 'stripe'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -45,6 +48,11 @@ end
 #Adding Rspec 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
+end
+
+#FactoryGirl to implement factories
+group :development, :test do
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 group :development do

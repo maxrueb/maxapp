@@ -11,23 +11,14 @@ describe "Product" do
 		end
 	end 
 
-	context "Create User1" do
-		before "User1" do
-			@user = User.create!(name: "Mike", email: "mike@mike.com", password: "12345")
+	context "Create User" do
+		it "" do 
+		@user = FactoryGirl.build(:user)
+    	expect(@user).to_not be_valid
 		end 
 
 		it "should return created User" do
 			expect(user.name).to eq "Mike"
-		end
-	end 
-
-	context "Create User2" do
-		before "User2" do
-			@user = User.create!(name: "John", email: "john@mike.com", password: "678910")
-		end 
-
-		it "should return created User" do
-			expect(user.name).to eq "John"
 		end
 	end 
 

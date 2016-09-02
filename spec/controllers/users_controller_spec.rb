@@ -2,7 +2,8 @@ require 'rails_helper'
 
 describe UsersController, :type => :controller do
 
-  let(:user) { User.create!(email: 'peter@example.com', password: '1234567890') }
+  # let(:user) { User.create!(email: 'peter@example.com', password: '1234567890') }
+  @user = FactoryGirl.create(:user)
 
   describe 'GET #show' do
     context 'User is logged in' do
@@ -34,3 +35,18 @@ describe UsersController, :type => :controller do
   end
 
 end
+
+
+# Alternative 
+  # before :each do
+  #   @user = FactoryGirl.create :user
+  #   sign_in @user
+  # end
+
+  # describe "GET index" do
+  #   it "assigns all subscribers as @subscribers" do
+  #     subscriber = @user.subscribers.create! valid_attributes
+  #     get :index
+  #     assigns(:subscribers).should eq([subscriber])
+  #   end
+  # end
