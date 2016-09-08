@@ -1,78 +1,28 @@
-require 'rails_helper'
+require 'rails_helper' 
 
-describe "Product" do
-	context "Calculate Average" do
-		before "Create Product" do
-			@product = Product.create!(name: "race bike")
-		end
+describe Product do
 
-		it "returns the average rating of all comments" do
-			expect(average.rating).to eq product.average_rating
-		end
-	end 
+    context "when the product has comments" do # create context
+      before do # before running the test...
+        @product = Product.create!(:name => "race bike")
+        @user = User.create(:email => "123@123.com", :password => "12345678" )
+        @product.comments.create!(:rating => 1, :user => @user, :body => "Perfect!")
+        @product.comments.create!(:rating => 3, :user => @user, :body => "It´s okay")
+        @product.comments.create!(:rating => 5, :user => @user, :body => "Awful bike!")
+      end
 
-	context "Create User" do
-		it "" do 
-		@user = FactoryGirl.build(:user)
-    	expect(@user).to_not be_valid
-		end 
+      it 'returns the average rating of all comments' do
+        expect(@product.average_rating).to eq 3
+      end
+    end
 
-		it "should return created User" do
-			expect(user.name).to eq "Mike"
-		end
-	end 
+    context "when product has no name" do
+      before do
+        @product = Product.create(:description => "This is a test bike")
+      end
 
-	context "Create User3" do
-		before "User3" do
-			@user = User.create!(name: "Julia", email: "Julia@mike.com", password: "678910")
-		end 
-
-		it "should return created User" do
-			expect(user.name).to eq "Julia"
-		end
-	end 
-
-	context "Ratings" do
-		before "Rating1" do
-			@product.comments.create!(rating: 1, user: @user, body: "Awful bike!")
-		end 
-
-		it "should return created User" do
-			expect(user.rating).to eq "1"
-		end
-	end 
-
-	context "Ratings" do
-		before "Rating2" do
-			@product.comments.create!(rating: 3, user: @user, body: "It´s okay")
-		end 
-
-		it "should return created User" do
-			expect(user.rating).to eq "3"
-		end
-	end
-
-	context "Ratings" do
-		before "Rating3" do
-			@product.comments.create!(rating: 5, user: @user, body: "Perfect!")
-		end 
-
-		it "should return created User" do
-			expect(user.rating).to eq "5"
-		end
-	end 
-end
-
-
-
-require 'rails_helper'
-
-describe "Product" do
-	context "with no strikes or spare" do
-		it "sums the pin count for each roll" do
-			bowling = Bowling.new
-			20.time { bowling.hit(4 )}
-			expect(bowling.score).to eq
-		end
-	end
-end
+      it 'is an invalid product' do
+        expect(@product).not_to be_valid
+      end
+    end
+end 
