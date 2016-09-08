@@ -2,28 +2,23 @@ require 'rails_helper'
 
 describe UsersController, :type => :controller do
 
-  # let(:user) { User.create!(email: 'peter@example.com', password: '1234567890') }
-  @user = FactoryGirl.create(:user)
+  before do
+    @user = User.create!(first_name: "Andy", last_name: "Lindeman", email: "andy@example.com", password: "abcdefgh")
+    @user2 = User.create!(first_name: "Andy", last_name: "Lindeman", email: "andy2@example.com", password: "abcdefgh")
+    #@user = FactoryGirl.create(:user)
+  end
 
   describe 'GET #show' do
     context 'User is logged in' do
-
       before do 
-        Devise::Controllers::SignInOut.sign_in user
-        
-          it 'loads correct user details' do
-            get :show
-          end 
+        sign_in @user
+      end
         
           it 'responds successfully with an HTTP 200 status code' do
-            expect(response).to be_success
-            expect(response).to have_http_status(200)
+            get :show, id: @user.id
+            expect(response.status).to eq 200
+            expect(assigns(:user)).to eq @user
           end
-
-          it 'Assign User equals the created user' do
-            expect(assigns(:user)).to eq user
-          end
-
       end
 
     context 'No user is logged in' do
