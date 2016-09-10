@@ -1,5 +1,8 @@
 <h1>About</h1>
 
+<% cache do %>
+  <% sleep 2 %>
+
 <div class="row">
 	<div class="image col-md-6 col-xs-12">
 	  <%= image_tag("racebike.jpg", class: "img-responsive my-image") %>
@@ -13,6 +16,6 @@
 		<div class="path"> <span class="glyphicon glyphicon-glyphicon glyphicon-fire"> </span> <%= link_to "See all products", products_path %></div>
 		</p>
 	</div>
-	
+<% end %>
 </div>
 

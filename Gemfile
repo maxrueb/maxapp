@@ -37,6 +37,9 @@ gem 'will_paginate', '~> 3.1.0'
 # Adding a payment system  
 gem 'stripe'
 
+#MemCachier
+gem 'dalli'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
