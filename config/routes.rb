@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   #root 'products#index'
   root 'static_pages#landing_page'
 
-
+  mount ActionCable.server => '/cable'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
