@@ -37,8 +37,11 @@ gem 'will_paginate', '~> 3.1.0'
 # Adding a payment system  
 gem 'stripe'
 
-#MemCachier
+# MemCachier
 gem 'dalli'
+
+# Redis: an advanced key-value store
+gem 'redis-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
