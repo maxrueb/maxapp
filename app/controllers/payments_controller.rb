@@ -13,7 +13,7 @@ class PaymentsController < ApplicationController
     	)
 
 		if charge.paid
-			Order.create!(product_id: @product.id, user_id: @user.id, total: @product.price)
+			Order.create!(:product_id => @product_id, :user_id => @user_id, :total => @product.price)
 		end
 
 		flash[:success] = "Payment processed successfully"
@@ -25,5 +25,6 @@ class PaymentsController < ApplicationController
     flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
   end
   redirect_to product_path(@product)
+  # redirect_to payments_create_path
 end
 end
