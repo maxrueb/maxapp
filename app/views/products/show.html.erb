@@ -3,12 +3,14 @@
 <!-- <p id="notice"><%= notice %></p> -->
 
 <h3>Detailed Productinformation</h3>
-	<div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+
 
 <div class="row" data-product-id="<%= @product.id %>">
 	<div class="col-lg-12 col-xs-12"><%= image_tag(@product.image_url, width: "350", class: "img-zoom img-responsive", data_zoom_image: @product.image_url) %></div>
-
-
+	
+<div class="col-lg-12 col-xs-12">
+	<div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+</div>
 
 <div class="col-lg-6 col-xs-12">
 	<p>
