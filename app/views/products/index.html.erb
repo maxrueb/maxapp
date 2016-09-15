@@ -10,5 +10,7 @@
 <br>
 
 <div class=" new col-md-12 col-xs-12">
+<% if user_signed_in? %>
 <%= link_to 'New Product', new_product_path %>
+<% end %>
 </div>
