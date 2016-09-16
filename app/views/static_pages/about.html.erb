@@ -4,9 +4,13 @@
   <% sleep 2 %>
 
 <div class="row">
-	<div class="image col-md-6 col-xs-12">
+	<div id="image-about" class="image col-md-6 col-xs-12">
 	  <%= image_tag("racebike.jpg", class: "img-responsive my-image") %>
 	</div>
+
+	<style type="text/css">
+        .img-responsive {max-width: 80%; max-height: 30%}
+    </style>
 
 	<div class="intro col-md-6 col-xs-12">
 		<p> Hey, it´s nice seeing you! On this side, you can find out some stuff about me. Enjoy :)</p> 
