@@ -61,8 +61,8 @@
   <h4>Add a review:</h4>
   <%= form_for([@product, @product.comments.build], remote: true) do |f| %>
     <p>
-      <%= f.label :body, "Comments" %><br>
-      <%= f.text_area :body %>
+      <%= f.label :body, "Comments", :required => true %><br>
+      <%= f.text_area :body, :required => true %>
     </p>
 
     <p>
@@ -77,20 +77,27 @@
 
 
 	<!--  _comments.html.erb -->
-	<div class="product-reviews">
-		<p><strong>Latest Commets</strong></p>
-	    <% @comments.each do |comment| %>
-	        <div class="row">
-	            <hr><div class="rated" data-score="<%= comment.rating %>"></div>
-	            <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
-    			<% if signed_in? && current_user.admin? %>
-       			<%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-    			<% end %></p>
-	            <p><%= "Rating: #{comment.rating}/5" %></p>
-	            <p><%= comment.body %></p>
-	        </div>
-	    <% end %>
-		<%= will_paginate @comments %>
+	<div class="dropdown">
+	  <button class="dropbtn">Dropdown</button>
+	  <div class="dropdown-content">
+	  	<a>
+		<div class="product-reviews">
+			<p><strong>Latest Commets</strong></p>
+		    <% @comments.each do |comment| %>
+		        <div class="row">
+		            <hr><div class="rated" data-score="<%= comment.rating %>"></div>
+		            <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
+	    			<% if signed_in? && current_user.admin? %>
+	       			<%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+	    			<% end %></p>
+		            <p><%= "Rating: #{comment.rating}/5" %></p>
+		            <p><%= comment.body %></p>
+		        </div>
+		    <% end %>
+			<%= will_paginate @comments %>
+		</div>
+		</a>
+
+	  </div>
 	</div>
 </div>
-
